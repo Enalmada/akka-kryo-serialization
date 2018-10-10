@@ -1,17 +1,17 @@
-sonatypeProfileName := "dschroeter"
+sonatypeProfileName := "com.github.enalmada"
 
 import ReleaseTransformations._
 
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,
-  runClean,   
-  runTest,    
+  runClean,
+  runTest,
   setReleaseVersion,
   commitReleaseVersion,
-  tagRelease, 
+  tagRelease,
   ReleaseStep(action = Command.process("publishSigned", _)),
-  setNextVersion, 
+  setNextVersion,
   commitNextVersion,
   ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
   pushChanges
