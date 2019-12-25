@@ -1,2 +1,2 @@
-sbt publishSigned
+sbt +publishSigned
 sbt sonatypeRelease
