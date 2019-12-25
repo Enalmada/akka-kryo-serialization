@@ -31,6 +31,7 @@ How to use this library in your project
 ---------------------------------------
 
 We provide several versions of the library:
+* v1.1.2 is build against Akka-2.6.1 playframework 2.8
 * (upcoming) v1.1.0 is build against Akka-2.5 and Kryo-4.0 and is available for Scala-2.12 and Scala-2.13
   this version is tested with JDK: OpenJdk8,OpenJdk11 and Scala: 2.12.10,2.13.1 and Akka: 2.5.26,2.6.0
 * v1.0.0 is build against Akka-2.5 and Kryo-4.0 and is available for Scala-2.11, Scala-2.12 and Scala-2.13

@@ -1,10 +1,10 @@
 
-val typesafe = "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
-val typesafeSnapshot = "Typesafe Snapshots Repository" at "http://repo.typesafe.com/typesafe/snapshots/"
+val typesafe = "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
+val typesafeSnapshot = "Typesafe Snapshots Repository" at "https://repo.typesafe.com/typesafe/snapshots/"
 val sonatypeSnapshot = "Sonatype Snapshots Repository" at "https://oss.sonatype.org/content/repositories/snapshots/"
 
 
-val defaultAkkaVersion = "2.5.26"
+val defaultAkkaVersion = "2.6.1"
 val akkaVersion =
   System.getProperty("akka.build.version", defaultAkkaVersion) match {
     case "default" => defaultAkkaVersion
@@ -15,7 +15,7 @@ val akkaVersion =
 enablePlugins(SbtOsgi, ReleasePlugin)
 
 name := "akka-kryo-serialization"
-organization := "io.altoo"
+organization := "com.github.enalmada"
 resolvers += typesafe
 resolvers += typesafeSnapshot
 resolvers += sonatypeSnapshot
@@ -125,3 +125,8 @@ pomExtra := <url>https://github.com/altoo-ag/akka-kryo-serialization</url>
       <email>nvo@scaling.ch</email>
     </developer>
   </developers>
+
+credentials += Credentials(Path.userHome / ".sbt" / "sonatype.credentials")
+releaseCrossBuild:= true
+publishConfiguration := publishConfiguration.value.withOverwrite(true)
+publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true)
